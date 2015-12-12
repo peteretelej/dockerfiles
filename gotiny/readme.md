@@ -21,3 +21,9 @@ Assuming static binary application (_app_) in current working directory.
 ```
 docker run --rm -it -v "$PWD"/app:/app etelej/gotiny ./app
 ```
+
+## Go Tip
+Remember to compile your binary with CGO disabled
+```
+CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app .
+```
