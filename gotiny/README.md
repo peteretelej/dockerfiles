@@ -11,8 +11,10 @@ x509: failed to load system roots and no roots provided
 
 Dockerfile:
 ``` dockerfile
-FROM centurylink/ca-certs
+FROM scratch
 MAINTAINER Peter Etelej <peter@etelej.com>
+
+COPY ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 ```
 
 
