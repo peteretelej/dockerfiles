@@ -1,0 +1,15 @@
+FROM debian:jessie
+MAINTAINER Peter Etelej <peter@etelej.com>
+
+RUN apt-get update && apt-get upgrade --no-install-recommends -y \
+	    && apt-get install -y wget \
+	    && wget https://caddyserver.com/download/linux/amd64 \
+	    && mkdir caddy && tar -C caddy -xzf caddy_linux_amd64.tar.gz \
+	    && mv caddy/caddy /usr/local/bin/caddy \
+	    && rm -rf caddy* && mkdir caddy\
+	    && apt-get purge -y wget \
+	    && rm -rf /var/lib/apt/lists/*
+
+CMD ["caddy","-conf","/Caddyfile","-agree"]
+
+
