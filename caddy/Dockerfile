@@ -3,8 +3,8 @@ MAINTAINER Peter Etelej <peter@etelej.com>
 
 RUN apt-get update && apt-get upgrade --no-install-recommends -y \
 	    && apt-get install -y wget \
-	    && wget https://caddyserver.com/download/linux/amd64 \
-	    && mkdir caddy && tar -C caddy -xzf caddy_linux_amd64.tar.gz \
+	    && wget https://caddyserver.com/download/linux/amd64 && mv amd64 caddy.tar.gz \
+	    && mkdir caddy && tar -C caddy -xzf caddy.tar.gz \
 	    && mv caddy/caddy /usr/local/bin/caddy \
 	    && rm -rf caddy* && mkdir caddy\
 	    && apt-get purge -y wget \
