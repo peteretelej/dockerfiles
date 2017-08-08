@@ -12,6 +12,7 @@ docker run --rm -p 80:2015 \
 	-v "$PWD"/data:/caddy/data \
 	-v "$PWD"/site:/site \
 	-e HOME=/caddy/data \
-	-w /site
-	etelej/caddy caddy
+	-w /site \
+	etelej/caddy
 ```
+
