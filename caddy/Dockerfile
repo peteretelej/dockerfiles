@@ -10,6 +10,6 @@ RUN apt-get update && apt-get upgrade --no-install-recommends -y \
 	    && apt-get purge -y wget \
 	    && rm -rf /var/lib/apt/lists/*
 
-CMD ["caddy","-conf","/Caddyfile","-agree"]
+CMD ["caddy","-conf","/Caddyfile","-agree","--log","stdout"]
 
 
