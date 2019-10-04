@@ -1,6 +1,7 @@
 #!/bin/bash
 
-docker run -d -p 9011:80 --name demo-caddy \
+docker run -d --name demo-caddy \
+	--net host \
 	-v $(pwd)/Caddyfile:/Caddyfile:ro \
 	-v $(pwd)/data:/caddy/data \
 	-v $(pwd)/html:/html \
