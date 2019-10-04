@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:stretch
 MAINTAINER Peter Etelej <peter@etelej.com>
 
 RUN apt-get update && apt-get upgrade --no-install-recommends -y \
